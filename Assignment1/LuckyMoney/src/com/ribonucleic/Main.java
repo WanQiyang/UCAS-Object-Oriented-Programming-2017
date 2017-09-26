@@ -15,7 +15,10 @@ class LuckyMoney {
 
     public BigDecimal getLuckyMoney() {
         if(_num <= 0) return new BigDecimal(0);
-        if(_num == 1) return _money;
+        if(_num == 1) {
+            _num = 0;
+            return _money;
+        }
         Random r = new Random();
         double min = 0.01;
         double max = 2 * _money.doubleValue() / _num;
